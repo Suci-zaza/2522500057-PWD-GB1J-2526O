@@ -11,312 +11,272 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
   body {
-    display: flex;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #d6c9e5, #cfc1e8);
-    color: #3c2576;
-    overflow-x: hidden;
+    background-color: #f5f6fa;
+    color: #333;
   }
 
-
-  .sidebar {
-    width: 90px;
-    background-color: #e3d7ed;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.6s ease;
-    overflow: hidden;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+  header {
+    background-color: #253774;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
   }
 
-  .sidebar:hover {
-    width: 320px;
-    align-items: flex-start;
-    box-shadow: 5px 0 25px rgba(60, 37, 118, 0.2);
+  header h1 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
   }
 
-  .icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #c5a8ef;
+  nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 28px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
     color: white;
-    transition: transform 0.3s;
+    text-decoration: none;
+    background-color: #113d84;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #163f7d;
+  }
+
+  nav a.active {
+    background-color: #b11c1c;
+  }
+
+  main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  section h2 {
+    border-bottom: 2px solid #0a2e63;
+    padding-bottom: 5px;
     margin-bottom: 15px;
+    color: #0a2e63;
   }
 
-  .sidebar:hover .icon {
-    transform: rotate(360deg);
+  #about {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  .sidebar h2 {
-    font-size: 1.5em;
-    margin-bottom: 25px;
+  .about-text {
+    flex: 1;
+  }
+
+  .about-photo {
+    flex: 0 0 180px;
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    width: 100%;
   }
 
-  .sidebar:hover h2 {
-    opacity: 1;
+  .about-photo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border: 3px solid #fff;
   }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-    width: 100%;
   }
 
-  .sidebar:hover form {
-    opacity: 1;
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
-  label {
+  .form-group label {
+    flex: 0 0 120px;
     font-weight: bold;
-    font-size: 0.9em;
   }
 
-  input, textarea {
-    border: none;
-    outline: none;
-    border-radius: 12px;
-    padding: 8px 12px;
-    background-color: white;
-    font-size: 0.9em;
-    transition: box-shadow 0.3s, transform 0.2s;
-    width: 100%;
+  .form-group input,
+  .form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    transition: 0.3s;
   }
 
-  input:focus, textarea:focus {
-    box-shadow: 0 0 8px #a58ddc;
-    transform: scale(1.03);
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #0a2e63;
+    box-shadow: 0 0 5px rgba(10,46,99,0.3);
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
   }
 
   button {
+    padding: 8px 20px;
     border: none;
-    border-radius: 20px;
-    padding: 8px;
-    font-weight: bold;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.4s ease;
-    width: 45%;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   }
 
   button[type="submit"] {
-    background-color: #c5a8ef;
+    background-color: #0a2e63;
+    color: white;
   }
 
   button[type="reset"] {
-    background-color: #f3d5b5;
+    background-color: #ccc;
+    color: #333;
   }
 
   button:hover {
-    transform: scale(1.08);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   }
 
-  footer {
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+  button:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.2);
   }
 
-  .sidebar:hover footer {
-    opacity: 1;
+  button[type="submit"]:active {
+    background-color: #163f7d;
   }
 
- 
-  main {
-    flex: 1;
-    padding: 50px 60px;
-    animation: fadeIn 1.5s ease;
-  }
-
-  header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 25px;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 40px;
-  }
-
-  header a {
-    color: #3c2576;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s;
-  }
-
-  header a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -3px;
-    left: 0;
-    background-color: #3c2576;
-    transition: width 0.3s;
-  }
-
-  header a:hover::after {
-    width: 100%;
-  }
-
-  #home h2 {
-    font-style: italic;
-    font-size: 1.8em;
-    color: #3c2576;
-  }
-
- 
-  .about-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-top: 40px;
-  }
-
-
-  #about {
-    background: #d8caef;
-    border-radius: 18px;
-    padding: 20px 30px;
-    border: 2px solid #8c7dc3;
-    box-shadow: 0 5px 15px rgba(140, 125, 195, 0.2);
-    transition: all 0.5s ease;
-    width: 60%;
-    animation: slideUp 1.5s ease;
-  }
-
-  #about:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 30px rgba(60, 37, 118, 0.25);
-  }
-
-  #about h2 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-  }
-
-  #about p {
-    margin: 4px 0;
-    font-size: 0.9em;
-  }
-
-  .about-photo {
-    width: 200px;
-    height: 220px;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(60, 37, 118, 0.25);
-    transition: all 0.6s ease;
-    opacity: 0;
-    transform: translateX(50px);
-    animation: fadeInPhoto 1.5s ease forwards;
+  button[type="reset"]:active {
+    background-color: #999;
   }
 
   
-  .about-photo:hover {
-    transform: scale(1.1) rotate(2deg);
+  @media (max-width: 700px) {
+    #about {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .about-photo {
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 3px;
+    }
+
+    .form-actions {
+      flex-direction: column;
+    }
+
+    button {
+      width: 100%;
+    }
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeInPhoto {
-    from { opacity: 0; transform: translateX(60px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-
-  b {
-    color: #3c2576;
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
   }
 </style>
 </head>
 <body>
 
+<header>
+  <h1>Ini Header</h1>
+  <nav>
+    <a href="#" class="active">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+</header>
 
-  <div class="sidebar">
-    <div class="icon">👤</div>
-    <h2>Kontak</h2>
-    <form action="" method="get">
-      <label for="txtNama">Nama :</label>
-      <input maxlength="20" type="text" id="txtNama" placeholder="Masukan Nama.." required autocomplete="name">
+<main>
+  <h2>Selamat Datang</h2>
+  <p>Ini contoh paragraf HTML.</p>
 
-      <label for="txtEmail">Email :</label>
-      <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukan Email..." required autocomplete="email">
+  <section id="about">
+    <div class="about-text">
+      <h2>Tentang Saya</h2>
+      <p><b>NIM</b>: 2522500057</p>
+<p> <b> Nama Lengkap</b>: Sucifitria Azhara  &#128525; </p> 
+<p> <b>Tempat Lahir</b> : Pangkalpinang &hearts; </p>
+<p><b>Tanggal Lahir</b> : 04 November 2005</p>
+<p><b> Hobi </b> : Eksperimen pakai python, Merakit Brick dan Main Game &#128516; </p>
+<p><b> Pasangan </b>: Belum ada karena jomblo &#128546; </p>
+<p> <b> Pekerjaan </b>: Digital Marketing </p>
+<p> <b>Nama Orang Tua </b>: Bapak Rasianto dan Ibu Viska &hearts; </p>
+<p> <b>Nama Kakak </b>: Tidak memiliki kakak &#128546; </p>
+<p> <b>Nama Adik </b>: Aditpa Ravelino &#128512; </p>
+    </div>
 
-      <label for="txtPesan">Pesan :</label>
-      <textarea  rows="4" id="txtPesan" name="txtPesan" placeholder="Masukan pesan anda.." required></textarea>
+    <div class="about-photo">
+      <img src="pas photo zaza.jpeg" alt="Foto Profil">
+    </div>
+  </section>
 
-      <div style="display: flex; gap: 10px;">
-        <button type="submit">KIRIM</button>
-        <button type="reset">BATAL</button>
+  <section id="contact">
+    <h2>Kontak Kami</h2>
+    <form>
+      <div class="form-group">
+        <label for="txtNama">Nama:</label>
+        <input type="text" id="txtNama" placeholder="Masukkan nama..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="txtEmail">Email:</label>
+        <input type="email" id="txtEmail" placeholder="Masukkan email..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="txtPesan">Pesan:</label>
+        <textarea id="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
       </div>
     </form>
+  </section>
+</main>
 
-    <footer>
-      <h3>Hubungi Saya</h3>
-      <p>HTML FORM</p>
-      <p>2025 {2522500057}<br>SUCIFITRIA AZHARA</p>
-    </footer>
-  </div>
+<footer>
+  <p>© 2025 Sucifitria Azhara [2522500057]</p>
+</footer>
 
-
-  <main>
-    <header>
-      <a href="#home">Beranda</a>
-      <a href="#about">Tentang</a>
-      <a href="#contact">Kontak</a>
-    </header>
-
-    <section id="home">
-      <h2>Welcome to my website</h2>
-    </section>
-
-   
-    <div class="about-container">
-      <img src="pas photo zaza.jpeg" alt="Foto Sucifitria Azhara" class="about-photo">
-
-      <section id="about">
-        <h2>Tentang Saya</h2>
-        <p><b>NIM</b>: 2522500057</p>
-        <p><b>Nama Lengkap</b>: Sucifitria Azhara 💜</p>
-        <p><b>Tempat Lahir</b>: Pangkalpinang</p>
-        <p><b>Tanggal Lahir</b>: 04 November 2005</p>
-        <p><b>Pasangan</b>: Belum ada karena jomblo 😢</p>
-        <p><b>Pekerjaan</b>: Digital Marketing</p>
-        <p><b>Nama Orang Tua</b>: Bapak Rasianto dan Ibu Viska ❤️</p>
-        <p><b>Nama Kakak</b>: Tidak memiliki kakak 😢</p>
-        <p><b>Nama Adik</b>: Aditpa Ravelino 😄</p>
-        <p><b>Hobi</b>: Eksperimen pakai Python, Merakit Brick, dan Main Game 🎮</p>
-      </section>
-    </div>
-  </main>
 </body>
 </html>

@@ -1,203 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Double Slider Login/Register</title>
+<title>Latihan3 - Kontak & Tentang Saya</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
   * {
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  body {
-    background-color: #111;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
-  .container {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    position: relative;
-    overflow: hidden;
-    width: 800px;
-    max-width: 100%;
-    min-height: 480px;
+
+  body {
+    background-color: #f5f6fa;
+    color: #333;
   }
-  .form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
+
+  header {
+    background-color: #253774;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
   }
-  .sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
+
+  header h1 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
   }
-  .container.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-  }
-  .sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-  }
-  .container.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-  }
-  @keyframes show {
-    0%, 49.99% { opacity: 0; z-index: 1; }
-    50%, 100% { opacity: 1; z-index: 5; }
-  }
-  form {
-    background-color: #fff;
+
+  nav {
     display: flex;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
     justify-content: center;
-    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    background-color: #113d84;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #163f7d;
+  }
+
+  nav a.active {
+    background-color: #b11c1c;
+  }
+
+  main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  section h2 {
+    border-bottom: 2px solid #0a2e63;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #0a2e63;
+  }
+
+  #about {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .about-photo {
+    flex: 0 0 180px;
     text-align: center;
   }
-  input {
-    background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
+
+  .about-photo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border: 3px solid #fff;
   }
-  button {
-    border-radius: 20px;
-    border: 1px solid #4caf50;
-    background-color: #4caf50;
-    color: #fff;
-    font-size: 12px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form-group label {
+    flex: 0 0 120px;
     font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
   }
+
+  .form-group input,
+  .form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    transition: 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #0a2e63;
+    box-shadow: 0 0 5px rgba(10,46,99,0.3);
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+
+  button[type="submit"] {
+    background-color: #0a2e63;
+    color: white;
+  }
+
+  button[type="reset"] {
+    background-color: #ccc;
+    color: #333;
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+
   button:active {
     transform: scale(0.95);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.2);
   }
-  .overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
+
+  button[type="submit"]:active {
+    background-color: #163f7d;
   }
-  .container.right-panel-active .overlay-container{
-    transform: translateX(-100%);
+
+  button[type="reset"]:active {
+    background-color: #999;
   }
-  .overlay {
-    background: linear-gradient(to right, #43cea2, #185a9d);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
-    color: #fff;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
+
+  
+  @media (max-width: 700px) {
+    #about {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .about-photo {
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 3px;
+    }
+
+    .form-actions {
+      flex-direction: column;
+    }
+
+    button {
+      width: 100%;
+    }
   }
-  .container.right-panel-active .overlay {
-    transform: translateX(50%);
-  }
-  .overlay-panel {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 40px;
+
+  footer {
     text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-  }
-  .overlay-left {
-    transform: translateX(-20%);
-  }
-  .container.right-panel-active .overlay-left {
-    transform: translateX(0);
-  }
-  .overlay-right {
-    right: 0;
-    transform: translateX(0);
-  }
-  .container.right-panel-active .overlay-right {
-    transform: translateX(20%);
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
   }
 </style>
 </head>
 <body>
 
-<div class="container" id="container">
-  <div class="form-container sign-up-container">
-    <form action="#">
-      <h1>Create Account</h1>
-      <input type="text" placeholder="Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Sign Up</button>
-    </form>
-  </div>
+<header>
+  <h1>Ini Header</h1>
+  <nav>
+    <a href="#" class="active">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+</header>
 
-  <div class="form-container sign-in-container">
-    <form action="#">
-      <h1>Sign in</h1>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Sign In</button>
-    </form>
-  </div>
+<main>
+  <h2>Selamat Datang</h2>
+  <p>Ini contoh paragraf HTML.</p>
 
-  <div class="overlay-container">
-    <div class="overlay">
-      <div class="overlay-panel overlay-left">
-        <h1>Welcome Back!</h1>
-        <p>To stay connected, please login with your info</p>
-        <button class="ghost" id="signIn">Sign In</button>
-      </div>
-      <div class="overlay-panel overlay-right">
-        <h1>Hello, Friend!</h1>
-        <p>Enter your details to start your journey</p>
-        <button class="ghost" id="signUp">Sign Up</button>
-      </div>
+  <section id="about">
+    <div class="about-text">
+      <h2>Tentang Saya</h2>
+      <p><b>NIM</b>: 2522500057</p>
+<p> <b> Nama Lengkap</b>: Sucifitria Azhara  &#128525; </p> 
+<p> <b>Tempat Lahir</b> : Pangkalpinang &hearts; </p>
+<p><b>Tanggal Lahir</b> : 04 November 2005</p>
+<p><b> Hobi </b> : Eksperimen pakai python, Merakit Brick dan Main Game &#128516; </p>
+<p><b> Pasangan </b>: Belum ada karena jomblo &#128546; </p>
+<p> <b> Pekerjaan </b>: Digital Marketing </p>
+<p> <b>Nama Orang Tua </b>: Bapak Rasianto dan Ibu Viska &hearts; </p>
+<p> <b>Nama Kakak </b>: Tidak memiliki kakak &#128546; </p>
+<p> <b>Nama Adik </b>: Aditpa Ravelino &#128512; </p>
     </div>
-  </div>
-</div>
 
-<script>
-  const signUpButton = document.getElementById('signUp');
-  const signInButton = document.getElementById('signIn');
-  const container = document.getElementById('container');
+    <div class="about-photo">
+      <img src="pas photo zaza.jpeg" alt="Foto Profil">
+    </div>
+  </section>
 
-  signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
-  });
+  <section id="contact">
+    <h2>Kontak Kami</h2>
+    <form>
+      <div class="form-group">
+        <label for="txtNama">Nama:</label>
+        <input type="text" id="txtNama" placeholder="Masukkan nama..." required>
+      </div>
 
-  signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
-  });
-</script>
+      <div class="form-group">
+        <label for="txtEmail">Email:</label>
+        <input type="email" id="txtEmail" placeholder="Masukkan email..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="txtPesan">Pesan:</label>
+        <textarea id="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Sucifitria Azhara [2522500057]</p>
+</footer>
 
 </body>
 </html>
