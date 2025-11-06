@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,20 +25,38 @@
     <p>Ini contoh paragraf HTML.</p>
     <?php
       echo "<p>Ini paragraf yang dihasilkan oleh PHP.</p>";
+    ?>
   </section>
 
   <section id="about">
     <h2>Tentang Saya</h2>
-    <p><strong>NIM:</strong> 2522500057</p>
-    <p><strong>Nama Lengkap:</strong> Sucifitria Azhara 😎</p>
-    <p><strong>Tempat Lahir:</strong> Pangkalpinang</p>
-    <p><strong>Tanggal Lahir:</strong> 04 November 2005</p>
-    <p><strong>Hobi:</strong> Eksperimen pakai Python, Merakit Brick, dan Main Game 😁</p>
-    <p><strong>Pasangan:</strong> Belum ada karena jomblo 😢</p>
-    <p><strong>Pekerjaan:</strong> Digital Marketing</p>
-    <p><strong>Nama Orang Tua:</strong> Bapak Rasianto dan Ibu Viska ❤️</p>
-    <p><strong>Nama Kakak:</strong> Tidak memiliki kakak 😢</p>
-    <p><strong>Nama Adik:</strong> Aditpa Ravelino 😄</p>
+    <?php
+      // --- Variabel PHP ---
+      $nim = "2522500057";
+      $nama = "Sucifitria Azhara 😎";
+      $tempat = "Pangkalpinang";
+      $tgl_lahir = "04 November 2005";
+      $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game 😁";
+      $pasangan = "Belum ada karena jomblo 😢";
+      $pekerjaan = "Digital Marketing";
+      $ortu = "Bapak Rasianto dan Ibu Viska ❤️";
+      $kakak = "Tidak memiliki kakak 😢";
+      $adik = "Aditpa Ravelino 😄";
+
+      // --- Tampilkan ke halaman ---
+      echo "
+      <p><strong>NIM:</strong> $nim</p>
+      <p><strong>Nama Lengkap:</strong> $nama</p>
+      <p><strong>Tempat Lahir:</strong> $tempat</p>
+      <p><strong>Tanggal Lahir:</strong> $tgl_lahir</p>
+      <p><strong>Hobi:</strong> $hobi</p>
+      <p><strong>Pasangan:</strong> $pasangan</p>
+      <p><strong>Pekerjaan:</strong> $pekerjaan</p>
+      <p><strong>Nama Orang Tua:</strong> $ortu</p>
+      <p><strong>Nama Kakak:</strong> $kakak</p>
+      <p><strong>Nama Adik:</strong> $adik</p>
+      ";
+    ?>
   </section>
 
   <section id="contact">
