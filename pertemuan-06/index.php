@@ -44,17 +44,18 @@
     $adik = "Aditpa Ravelino 😄";
   ?>
 
-  <h2>Tentang Saya</h2>
-    <p><strong>NIM:</strong> <? php echo $nim ?></p>
-    <p><strong>Nama Lengkap:</strong> <? php echo $nama?></p>
-    <p><strong>Tempat Lahir:</strong> <? php echo $tempat ?></p>
-    <p><strong>Tanggal Lahir:</strong> <? php echo $tgl_lahir?></p>
-    <p><strong>Hobi:</strong> <? php echo $hobi ?></p>
-    <p><strong>Pasangan:</strong> <? php echo $pasangan ?></p>
-    <p><strong>Pekerjaan:</strong> <? php echo $pekerjaan?></p>
-    <p><strong>Nama Orang Tua:</strong> <? php echo $ortu?></p>
-    <p><strong>Nama Kakak:</strong> <? php echo $kakak ?></p>
-    <p><strong>Nama Adik:</strong> <? php echo $adik ?></p>
+
+    <p><strong>NIM:</strong> <?php echo $nim ?></p>
+<p><strong>Nama Lengkap:</strong> <?php echo $nama ?></p>
+<p><strong>Tempat Lahir:</strong> <?php echo $tempat ?></p>
+<p><strong>Tanggal Lahir:</strong> <?php echo $tgl_lahir ?></p>
+<p><strong>Hobi:</strong> <?php echo $hobi ?></p>
+<p><strong>Pasangan:</strong> <?php echo $pasangan ?></p>
+<p><strong>Pekerjaan:</strong> <?php echo $pekerjaan ?></p>
+<p><strong>Nama Orang Tua:</strong> <?php echo $ortu ?></p>
+<p><strong>Nama Kakak:</strong> <?php echo $kakak ?></p>
+<p><strong>Nama Adik:</strong> <?php echo $adik ?></p>
+
 
 </section>
 
