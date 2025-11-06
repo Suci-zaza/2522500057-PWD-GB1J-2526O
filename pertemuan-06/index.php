@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,35 +31,34 @@
   <section id="about">
     <h2>Tentang Saya</h2>
     <?php
-      // --- Variabel PHP ---
+      
       $nim = "2522500057";
       $nama = "Sucifitria Azhara 😎";
       $tempat = "Pangkalpinang";
       $tgl_lahir = "04 November 2005";
       $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game 😁";
-      $pasangan = "Belum ada karena jomblo 😢";
+      $pasangan = "Belum ada ♥";
       $pekerjaan = "Digital Marketing";
       $ortu = "Bapak Rasianto dan Ibu Viska ❤️";
       $kakak = "Tidak memiliki kakak 😢";
       $adik = "Aditpa Ravelino 😄";
-
-      // --- Tampilkan ke halaman ---
-      echo "
-      <p><strong>NIM:</strong> $nim</p>
-      <p><strong>Nama Lengkap:</strong> $nama</p>
-      <p><strong>Tempat Lahir:</strong> $tempat</p>
-      <p><strong>Tanggal Lahir:</strong> $tgl_lahir</p>
-      <p><strong>Hobi:</strong> $hobi</p>
-      <p><strong>Pasangan:</strong> $pasangan</p>
-      <p><strong>Pekerjaan:</strong> $pekerjaan</p>
-      <p><strong>Nama Orang Tua:</strong> $ortu</p>
-      <p><strong>Nama Kakak:</strong> $kakak</p>
-      <p><strong>Nama Adik:</strong> $adik</p>
-      ";
     ?>
-  </section>
 
-  <section id="contact">
+    <table>
+      <tr><td><b>NIM          :</b></td><td><?= $nim ?></td></tr>
+      <tr><td><b>Nama Lengkap :</b></td><td><?= $nama ?></td></tr>
+      <tr><td><b>Tempat Lahir :</b><td><td><?= $tempat ?></td></tr>
+      <tr><td><b>Tanggal Lahir:</b></td><td><?= $tgl_lahir ?></td></tr>
+      <tr><td><b>Hobi         : </b></td><td><?= $hobi ?></td></tr>
+      <tr><td><b>Pasangan     : </b></td><td><?= $pasangan ?></td></tr>
+      <tr><td><b>Pekerjaan    :</b></td><td><?= $pekerjaan ?></td></tr>
+      <tr><td><b>Nama Orang Tua: </b></td><td><?= $ortu ?></td></tr>
+      <tr><td><b>Nama Kakak  :</b></td><td><?= $kakak ?></td></tr>
+      <tr><td><b>Nama Adik   :</b></td><td><?= $adik ?></td></tr>
+    </table>
+  </section>
+</main>
+ <section id="contact">
     <h2>Kontak Kami</h2>
     <form>
       <label for="txtNama"><span>Nama:</span>
@@ -81,6 +80,6 @@
   <p>&copy; 2025 Suci Fitria Azhara [2522500057]</p>
 </footer>
 
-<script src="coba.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
