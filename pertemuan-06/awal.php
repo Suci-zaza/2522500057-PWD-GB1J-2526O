@@ -71,11 +71,11 @@
   $sks1 = 4; $sks2 = 2; $sks3 = 2; $sks4 = 3; $sks5 = 3;
 
 
-  $nilaiHadir1 = 90; $nilaiTugas1 = 85; $nilaiUTS1 = 73; $nilaiUAS1 = 84;
-  $nilaiHadir2 = 20; $nilaiTugas2 = 50; $nilaiUTS2 = 60; $nilaiUAS2 = 50;
-  $nilaiHadir3 = 88; $nilaiTugas3 = 75; $nilaiUTS3 = 80; $nilaiUAS3 = 85;
-  $nilaiHadir4 = 80; $nilaiTugas4 = 75; $nilaiUTS4 = 70; $nilaiUAS4 = 78;
-  $nilaiHadir5 = 69; $nilaiTugas5 = 90; $nilaiUTS5 = 100; $nilaiUAS5 = 100;
+  $nilaiHadir1 = 10; $nilaiTugas1 = 67; $nilaiUTS1 = 70; $nilaiUAS1 = 50;
+  $nilaiHadir2 = 20; $nilaiTugas2 = 50; $nilaiUTS2 = 60; $nilaiUAS2 = 60;
+  $nilaiHadir3 = 88; $nilaiTugas3 = 75; $nilaiUTS3 = 80; $nilaiUAS3 = 89;
+  $nilaiHadir4 = 80; $nilaiTugas4 = 75; $nilaiUTS4 = 70; $nilaiUAS4 = 56;
+  $nilaiHadir5 = 69; $nilaiTugas5 = 70; $nilaiUTS5 = 100; $nilaiUAS5 = 90;
 
   function hitungNilaiAkhir($hadir, $tugas, $uts, $uas) {
     return (0.1 * $hadir) + (0.3 * $tugas) + (0.3 * $uts) + (0.3 * $uas);
