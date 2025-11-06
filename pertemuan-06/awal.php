@@ -72,7 +72,7 @@
 
 
   $nilaiHadir1 = 90; $nilaiTugas1 = 85; $nilaiUTS1 = 73; $nilaiUAS1 = 84;
-  $nilaiHadir2 = 70; $nilaiTugas2 = 50; $nilaiUTS2 = 60; $nilaiUAS2 = 80;
+  $nilaiHadir2 = 20; $nilaiTugas2 = 50; $nilaiUTS2 = 60; $nilaiUAS2 = 50;
   $nilaiHadir3 = 88; $nilaiTugas3 = 75; $nilaiUTS3 = 80; $nilaiUAS3 = 85;
   $nilaiHadir4 = 80; $nilaiTugas4 = 75; $nilaiUTS4 = 70; $nilaiUAS4 = 78;
   $nilaiHadir5 = 69; $nilaiTugas5 = 90; $nilaiUTS5 = 100; $nilaiUAS5 = 100;
