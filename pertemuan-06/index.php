@@ -32,16 +32,16 @@
   <h2>Tentang Saya</h2>
 
   <?php
-    $nim = "2522500057";
-    $nama = "Sucifitria Azhara 😎";
-    $tempat = "Pangkalpinang";
+    $ $nim = "2522500057";
+    $nama = "Sucifitria Azhara  &#128525;";
+    $tempat = "Pangkalpinang  &hearts;";
     $tgl_lahir = "04 November 2005";
-    $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game 😁";
-    $pasangan = "Belum ada ♥";
+    $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game &#128516;";
+    $pasangan = "Belum ada &#128546; ";
     $pekerjaan = "Digital Marketing";
-    $ortu = "Bapak Rasianto dan Ibu Viska ❤️";
-    $kakak = "Tidak memiliki kakak 😢";
-    $adik = "Aditpa Ravelino 😄";
+    $ortu = "Bapak Rasianto dan Ibu Viska &hearts; ";
+    $kakak = "Tidak memiliki kakak &#128546;";
+    $adik = "Aditpa Ravelino &#128512;";
   ?>
 
 
