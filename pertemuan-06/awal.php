@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pelan-pelan aja guys</title>
-<link rel="stylesheet" href="belajar.css">
+<link rel="stylesheet" href="hahah.css">
 </head>
 <body>
 <header>
@@ -58,32 +58,29 @@
   </table>
 </section>
 <section id="ipk">
-  <h2>Perhitungan Nilai Akhir, Grade, dan IPK</h2>
+  <h2>Nilai Saya</h2>
 
   <?php
-  // Nama Mata Kuliah
+
   $namaMatkul1 = "Algoritma dan Struktur Data";
   $namaMatkul2 = "Agama";
   $namaMatkul3 = "Bahasa Inggris";
   $namaMatkul4 = "Basis Data";
   $namaMatkul5 = "Pemrograman Web Dasar";
 
-  // SKS
-  $sks1 = 3; $sks2 = 2; $sks3 = 2; $sks4 = 3; $sks5 = 3;
+  $sks1 = 4; $sks2 = 2; $sks3 = 2; $sks4 = 3; $sks5 = 3;
 
-  // Nilai Kehadiran, Tugas, UTS, UAS
-  $nilaiKehadiran1 = 90; $nilaiTugas1 = 85; $nilaiUTS1 = 80; $nilaiUAS1 = 88;
-  $nilaiKehadiran2 = 92; $nilaiTugas2 = 86; $nilaiUTS2 = 83; $nilaiUAS2 = 87;
-  $nilaiKehadiran3 = 88; $nilaiTugas3 = 80; $nilaiUTS3 = 78; $nilaiUAS3 = 82;
-  $nilaiKehadiran4 = 85; $nilaiTugas4 = 80; $nilaiUTS4 = 75; $nilaiUAS4 = 80;
-  $nilaiKehadiran5 = 89; $nilaiTugas5 = 84; $nilaiUTS5 = 82; $nilaiUAS5 = 90;
 
-  // Rumus nilai akhir
+  $nilaiHadir1 = 90; $nilaiTugas1 = 85; $nilaiUTS1 = 73; $nilaiUAS1 = 84;
+  $nilaiHadir2 = 70; $nilaiTugas2 = 50; $nilaiUTS2 = 60; $nilaiUAS2 = 80;
+  $nilaiHadir3 = 88; $nilaiTugas3 = 75; $nilaiUTS3 = 80; $nilaiUAS3 = 85;
+  $nilaiHadir4 = 80; $nilaiTugas4 = 75; $nilaiUTS4 = 70; $nilaiUAS4 = 78;
+  $nilaiHadir5 = 69; $nilaiTugas5 = 90; $nilaiUTS5 = 100; $nilaiUAS5 = 100;
+
   function hitungNilaiAkhir($hadir, $tugas, $uts, $uas) {
     return (0.1 * $hadir) + (0.3 * $tugas) + (0.3 * $uts) + (0.3 * $uas);
   }
 
-  // Fungsi konversi nilai ke grade
   function getGrade($nilai) {
     if ($nilai >= 91) return "A";
     elseif ($nilai >= 86) return "A-";
@@ -96,8 +93,8 @@
     else return "E";
   }
 
-  // Fungsi konversi grade ke angka mutu
-  function getAngkaMutu($grade) {
+
+  function getMutu($grade) {
     switch ($grade) {
       case "A": return 4.00;
       case "A-": return 3.70;
@@ -111,52 +108,47 @@
     }
   }
 
-  // Hitung nilai akhir dan IPK
-  $nilaiAkhir = [];
-  $grade = [];
-  $mutu = [];
-  $bobot = [];
+  function getStatus($grade) {
+    return ($grade == "D" || $grade == "E") ? "Gagal" : "Lulus";
+  }
+
+
   $totalBobot = 0;
   $totalSks = $sks1 + $sks2 + $sks3 + $sks4 + $sks5;
 
   for ($i = 1; $i <= 5; $i++) {
-    $akhir = hitungNilaiAkhir(${"nilaiKehadiran$i"}, ${"nilaiTugas$i"}, ${"nilaiUTS$i"}, ${"nilaiUAS$i"});
-    $g = getGrade($akhir);
-    $am = getAngkaMutu($g);
-    $b = $am * ${"sks$i"};
-
-    $nilaiAkhir[$i] = $akhir;
-    $grade[$i] = $g;
-    $mutu[$i] = $am;
-    $bobot[$i] = $b;
-
-    $totalBobot += $b;
+    ${"nilaiAkhir$i"} = hitungNilaiAkhir(${"nilaiHadir$i"}, ${"nilaiTugas$i"}, ${"nilaiUTS$i"}, ${"nilaiUAS$i"});
+    ${"grade$i"} = getGrade(${"nilaiAkhir$i"});
+    ${"mutu$i"} = getMutu(${"grade$i"});
+    ${"bobot$i"} = ${"mutu$i"} * ${"sks$i"};
+    ${"status$i"} = getStatus(${"grade$i"});
+    $totalBobot += ${"bobot$i"};
   }
 
   $ipk = $totalBobot / $totalSks;
+
+
+  for ($i = 1; $i <= 5; $i++) {
+    echo "<h3>Nama Mata Kuliah ke-$i : ${'namaMatkul'.$i}</h3>";
+    echo "SKS : ${'sks'.$i}<br>";
+    echo "Kehadiran : ${'nilaiHadir'.$i}<br>";
+    echo "Tugas : ${'nilaiTugas'.$i}<br>";
+    echo "UTS : ${'nilaiUTS'.$i}<br>";
+    echo "UAS : ${'nilaiUAS'.$i}<br>";
+    echo "Nilai Akhir : " . number_format(${"nilaiAkhir$i"}, 2) . "<br>";
+    echo "Grade : ${'grade'.$i}<br>";
+    echo "Angka Mutu : ${'mutu'.$i}<br>";
+    echo "Bobot : " . number_format(${"bobot$i"}, 2) . "<br>";
+    echo "Status : ${'status'.$i}<hr>";
+  }
+
+  echo "<p><b>Total Bobot = " . number_format($totalBobot, 2) . "</b></p>";
+  echo "<p><b>Total SKS = $totalSks</b></p>";
+  echo "<p><b>IPK = " . number_format($ipk, 2) . "</b></p>";
   ?>
-
-  <table border="1" cellpadding="6">
-    <tr>
-      <th>No</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai Akhir</th><th>Grade</th><th>Angka Mutu</th><th>Bobot</th>
-    </tr>
-    <?php for ($i = 1; $i <= 5; $i++): ?>
-      <tr>
-        <td><?= $i ?></td>
-        <td><?= ${"namaMatkul$i"} ?></td>
-        <td><?= ${"sks$i"} ?></td>
-        <td><?= number_format($nilaiAkhir[$i], 2) ?></td>
-        <td><?= $grade[$i] ?></td>
-        <td><?= number_format($mutu[$i], 2) ?></td>
-        <td><?= number_format($bobot[$i], 2) ?></td>
-      </tr>
-    <?php endfor; ?>
-  </table>
-
-  <p><strong>Total SKS:</strong> <?= $totalSks ?></p>
-  <p><strong>Total Bobot:</strong> <?= number_format($totalBobot, 2) ?></p>
-  <p><strong>IPK:</strong> <?= number_format($ipk, 2) ?></p>
 </section>
+
+
 
 </main>
  <section id="contact">
