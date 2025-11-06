@@ -33,15 +33,15 @@
 
   <?php
     $nim = "2522500057";
-    $nama = "Sucifitria Azhara 😎";
-    $tempat = "Pangkalpinang";
+    $nama = "Sucifitria Azhara  &#128525;";
+    $tempat = "Pangkalpinang  &hearts;";
     $tgl_lahir = "04 November 2005";
-    $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game 😁";
-    $pasangan = "Belum ada ♥";
+    $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game &#128516;";
+    $pasangan = "Belum ada &#128546; ";
     $pekerjaan = "Digital Marketing";
-    $ortu = "Bapak Rasianto dan Ibu Viska ❤️";
-    $kakak = "Tidak memiliki kakak 😢";
-    $adik = "Aditpa Ravelino 😄";
+    $ortu = "Bapak Rasianto dan Ibu Viska &hearts; ";
+    $kakak = "Tidak memiliki kakak &#128546;";
+    $adik = "Aditpa Ravelino &#128512;";
   ?>
 
   <table class="bio-table">
@@ -173,6 +173,16 @@
   <p>&copy; 2025 Suci Fitria Azhara [2522500057]</p>
 </footer>
 
-<script src="script.js"></script>
+<script >document.querySelector("form").addEventListener("submit", function (e) {
+const nama = document.getElementById("txtNama").value.trim();
+const email = document.getElementById("txtEmail").value.trim();
+const pesan = document.getElementById("txtPesan").value.trim();
+if (nama === "" || email === "" || pesan === "") {
+alert("Semua kolom wajib diisi!");
+e.preventDefault();
+} else {
+alert("Terima kasih, " + nama + "! Pesan Anda telah dikirim.");
+}
+});</script>
 </body>
 </html>
