@@ -44,18 +44,18 @@
     $adik = "Aditpa Ravelino 😄";
   ?>
 
-  <table class="bio-table">
-    <tr><th>NIM :</th><td><?= $nim ?></td></tr>
-    <tr><th>Nama Lengkap :</th><td><?= $nama ?></td></tr>
-    <tr><th>Tempat Lahir :</th><td><?= $tempat ?></td></tr>
-    <tr><th>Tanggal Lahir :</th><td><?= $tgl_lahir ?></td></tr>
-    <tr><th>Hobi :</th><td><?= $hobi ?></td></tr>
-    <tr><th>Pasangan :</th><td><?= $pasangan ?></td></tr>
-    <tr><th>Pekerjaan :</th><td><?= $pekerjaan ?></td></tr>
-    <tr><th>Nama Orang Tua :</th><td><?= $ortu ?></td></tr>
-    <tr><th>Nama Kakak :</th><td><?= $kakak ?></td></tr>
-    <tr><th>Nama Adik :</th><td><?= $adik ?></td></tr>
-  </table>
+  <h2>Tentang Saya</h2>
+    <p><strong>NIM:</strong> <? php echo $nim ?></p>
+    <p><strong>Nama Lengkap:</strong> <? php echo $nama?></p>
+    <p><strong>Tempat Lahir:</strong> <? php echo $tempat ?></p>
+    <p><strong>Tanggal Lahir:</strong> <? php echo $tgl_lahir?></p>
+    <p><strong>Hobi:</strong> <? php echo $hobi ?></p>
+    <p><strong>Pasangan:</strong> <? php echo $pasangan ?></p>
+    <p><strong>Pekerjaan:</strong> <? php echo $pekerjaan?></p>
+    <p><strong>Nama Orang Tua:</strong> <? php echo $ortu?></p>
+    <p><strong>Nama Kakak:</strong> <? php echo $kakak ?></p>
+    <p><strong>Nama Adik:</strong> <? php echo $adik ?></p>
+
 </section>
 
 </main>
