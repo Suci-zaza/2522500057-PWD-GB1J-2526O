@@ -253,3 +253,46 @@ nav.active {
     cursor: pointer;
   }
 }
+
+#about {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 30px auto;
+  max-width: 700px;
+}
+
+#about h2 {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #0a3d91;
+  border-bottom: 3px solid #0a3d91;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.bio-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.bio-table th {
+  text-align: left;
+  color: #0a3d91;
+  font-weight: 600;
+  padding: 8px 15px 8px 0;
+  width: 35%;
+  vertical-align: top;
+}
+
+.bio-table td {
+  padding: 8px 0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.bio-table tr:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}

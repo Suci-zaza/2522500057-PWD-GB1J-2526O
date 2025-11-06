@@ -29,34 +29,35 @@
   </section>
 
   <section id="about">
-    <h2>Tentang Saya</h2>
-    <?php
-      
-      $nim = "2522500057";
-      $nama = "Sucifitria Azhara 😎";
-      $tempat = "Pangkalpinang";
-      $tgl_lahir = "04 November 2005";
-      $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game 😁";
-      $pasangan = "Belum ada ♥";
-      $pekerjaan = "Digital Marketing";
-      $ortu = "Bapak Rasianto dan Ibu Viska ❤️";
-      $kakak = "Tidak memiliki kakak 😢";
-      $adik = "Aditpa Ravelino 😄";
-    ?>
+  <h2>Tentang Saya</h2>
 
-    <table>
-      <tr><td><b>NIM          :</b></td><td><?= $nim ?></td></tr>
-      <tr><td><b>Nama Lengkap :</b></td><td><?= $nama ?></td></tr>
-      <tr><td><b>Tempat Lahir :</b><td><td><?= $tempat ?></td></tr>
-      <tr><td><b>Tanggal Lahir:</b></td><td><?= $tgl_lahir ?></td></tr>
-      <tr><td><b>Hobi         : </b></td><td><?= $hobi ?></td></tr>
-      <tr><td><b>Pasangan     : </b></td><td><?= $pasangan ?></td></tr>
-      <tr><td><b>Pekerjaan    :</b></td><td><?= $pekerjaan ?></td></tr>
-      <tr><td><b>Nama Orang Tua: </b></td><td><?= $ortu ?></td></tr>
-      <tr><td><b>Nama Kakak  :</b></td><td><?= $kakak ?></td></tr>
-      <tr><td><b>Nama Adik   :</b></td><td><?= $adik ?></td></tr>
-    </table>
-  </section>
+  <?php
+    $nim = "2522500057";
+    $nama = "Sucifitria Azhara 😎";
+    $tempat = "Pangkalpinang";
+    $tgl_lahir = "04 November 2005";
+    $hobi = "Eksperimen pakai Python, Merakit Brick, dan Main Game 😁";
+    $pasangan = "Belum ada ♥";
+    $pekerjaan = "Digital Marketing";
+    $ortu = "Bapak Rasianto dan Ibu Viska ❤️";
+    $kakak = "Tidak memiliki kakak 😢";
+    $adik = "Aditpa Ravelino 😄";
+  ?>
+
+  <table class="bio-table">
+    <tr><th>NIM :</th><td><?= $nim ?></td></tr>
+    <tr><th>Nama Lengkap :</th><td><?= $nama ?></td></tr>
+    <tr><th>Tempat Lahir :</th><td><?= $tempat ?></td></tr>
+    <tr><th>Tanggal Lahir :</th><td><?= $tgl_lahir ?></td></tr>
+    <tr><th>Hobi :</th><td><?= $hobi ?></td></tr>
+    <tr><th>Pasangan :</th><td><?= $pasangan ?></td></tr>
+    <tr><th>Pekerjaan :</th><td><?= $pekerjaan ?></td></tr>
+    <tr><th>Nama Orang Tua :</th><td><?= $ortu ?></td></tr>
+    <tr><th>Nama Kakak :</th><td><?= $kakak ?></td></tr>
+    <tr><th>Nama Adik :</th><td><?= $adik ?></td></tr>
+  </table>
+</section>
+
 </main>
  <section id="contact">
     <h2>Kontak Kami</h2>
