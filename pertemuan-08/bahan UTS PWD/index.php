@@ -54,7 +54,7 @@ endif;
 
     <section id="biodata">
       <h2>Bisa isi biodata anda</h2>
-   <form action="proses.php" method="POST">
+   <form action="terima.php" method="POST">
 
         <label for="txtNIM"><span>NIM :</span> <br>
           <input type="text" id="txtNIM" name="txtNIM" placeholder="Masukkan NIM" required autocomplete="NIM">
@@ -104,10 +104,7 @@ endif;
     </section>
     <section id="about">
       <h2>Tentang Saya</h2>
-      <p><strong>NIM:</strong>
-      </p>
-      <p><strong>Nama Lengkap:</strong>
-
+    
         <?php if (!empty($sesNIM)): ?>
         <br><hr>
         <p><strong>NIM :</strong> <?php echo $sesNIM ?></p>
@@ -120,14 +117,6 @@ endif;
          <p><strong>Nama adik :</strong> <?php echo $sesNamaadik ?></p>
       <?php endif; ?>
       </p>
-      <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
-      <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
-      <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
     </section>
 
     <section id="contact">
