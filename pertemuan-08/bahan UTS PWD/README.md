@@ -11,4 +11,7 @@ Proses saya mengerjakan UTS ini sebagai berikut:<br>
   <li>Memasukan folder bahan uts ke git hub pertemuan 8</li>
   <li>Membuat section biodata mahasiswa</li>
   <li>membuat form biodata mahasiswa sesuai perintah soal</li>
+   <li>mengedik layout biodata</li>
+    <li>Memperbaiki buttom yang tidak bisa</li>
+     <li>mengubungkan biodata dengan about</li>
 </ol>
