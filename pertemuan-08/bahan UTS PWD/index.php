@@ -103,23 +103,22 @@ endif;
 </input>
     </section>
     <section id="about">
-      <?php
-      $nim = 2511500010;
-      $NIM = '0344300002';
-      $nama = "Say'yid Abdullah";
-      $Nama = 'Al\'kautar Benyamin';
-      $tempat = "Jebus";
-      ?>
       <h2>Tentang Saya</h2>
       <p><strong>NIM:</strong>
-        <?php
-        echo $NIM;
-        ?>
       </p>
       <p><strong>Nama Lengkap:</strong>
-        <?php
-        echo $Nama;
-        ?> &#128526;
+
+        <?php if (!empty($sesNIM)): ?>
+        <br><hr>
+        <p><strong>NIM :</strong> <?php echo $sesNIM ?></p>
+        <p><strong>Nama Lengkap :</strong> <?php echo $sesNamalengkap ?></p>
+        <p><strong>Tanggal lahir :</strong> <?php echo $sesTanggallahir  ?></p>
+        <p><strong>Hobi :</strong> <?php echo $sesHobi ?></p>
+        <p><strong>Pasangan :</strong> <?php echo $sesPasangan ?></p>
+        <p><strong>Pekerjaan:</strong> <?php echo $sesPekerjaan ?></p>
+        <p><strong>Nama kakak:</strong> <?php echo $sesNamakakak ?></p>
+         <p><strong>Nama adik :</strong> <?php echo $sesNamaadik ?></p>
+      <?php endif; ?>
       </p>
       <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
       <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
