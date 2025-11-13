@@ -52,23 +52,23 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-    <section id="biodata sederhana mahasiswa">
+    <section id="biodata">
       <h2>Bisa isi biodata anda</h2>
    <form action="proses.php" method="POST">
 
-        <label for="txtNIM"><span>NIM :</span>
+        <label for="txtNIM"><span>NIM :</span> <br>
           <input type="text" id="txtNIM" name="txtNIM" placeholder="Masukkan NIM" required autocomplete="NIM">
         </label>
 
-        <label for="txtNamalengkap"><span>Nama Lengkap :</span>
+        <label for="txtNamalengkap"><span>Nama Lengkap :</span><br>
           <input type="text" id="txtNamalengkap" name="txtNamalengkap" placeholder="Masukkan Nama lengkap" required autocomplete="Nama lengkap">
         </label>
 
-         <label for="txtTempatlahir"><span>Tempat Lahir :</span>
+         <label for="txtTempatlahir"><span>Tempat Lahir :</span><br>
           <input type="text" id="txtNIM" name="txtTempatlahir" placeholder="Masukkan Tempat lahir" required autocomplete="Tempat lahir">
         </label>
 
-         <label for="txtTanggallahir"><span>Tanggal Lahir :</span>
+         <label for="txtTanggallahir"><span>Tanggal Lahir :</span><br>
           <input type="text" id="txtTanggallahir" name="txtTanggallahir" placeholder="Masukkan Tanggal lahir" required autocomplete="Tanggal lahir">
         </label>
 
@@ -92,7 +92,7 @@ endif;
           <input type="text" id="txtNamakakak" name="txtNamakakak" placeholder="Masukkan Nama kakak" required autocomplete="Nama kakak">
         </label>
 
-        <label for="txtNamaadik"><span>Nama Adik :</span>
+        <label for="txtNamaadik"><span>Nama Adik :</span> 
           <input type="text" id="txtNamaadik" name="txtNamaadik" placeholder="Masukkan Nama adik" required autocomplete="Nama adik">
         </label>
 

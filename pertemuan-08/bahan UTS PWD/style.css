@@ -88,6 +88,7 @@ header li a:active {
 }
 
 #about p,
+#biodata label,
 #contact label {
   display: flex;
   justify-content: flex-start;
@@ -98,7 +99,7 @@ header li a:active {
 }
 
 #about strong,
-#biodata label
+#biodata label,
 #contact label>span {
   min-width: 180px;
   color: #003366;
@@ -110,6 +111,7 @@ header li a:active {
 
 #contact input,
 #biodata input,
+#biodata textarea,
 #contact textarea {
   flex: 1;
   border: 1px solid #ccc;
@@ -226,18 +228,23 @@ footer {
   }
 
   #about p,
+  #biodata label,
   #contact label {
     flex-direction: column;
     align-items: flex-start;
   }
 
   #about strong,
+  #biodata label,
   #contact label>span {
     text-align: left;
     padding-right: 0;
     margin-bottom: 2px;
   }
 
+  #biodata input,
+  #biodata textarea,
+  #biodata button,
   #contact input,
   #contact textarea,
   #contact button {
