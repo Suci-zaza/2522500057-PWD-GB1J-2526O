@@ -19,4 +19,4 @@ $_SESSION["sesNamakakak"] = $sesNamakakak;
 $_SESSION["sesNamaadik"] = $sesNamaadik;
 $_SESSION["sesPekerjaan"] = $sesPekerjaan;
 header("location: index.php");
-?>
+?>  
