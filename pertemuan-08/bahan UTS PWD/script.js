@@ -94,6 +94,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     const nama = document.getElementById("txtNama");
     const email = document.getElementById("txtEmail");
     const pesan = document.getElementById("txtPesan");
+    
     e.preventDefault();
     let isValid = true;
 
