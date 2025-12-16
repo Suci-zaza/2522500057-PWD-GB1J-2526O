@@ -21,7 +21,6 @@
 
 
 <?php
-  session_start();
 $sesNIM =  $_SESSION["sesNIM"];
 $sesNamalengkap = $_SESSION["sesNamalengkap"];
 $sesTempatlahir = $_SESSION["sesTempatlahir "];    
