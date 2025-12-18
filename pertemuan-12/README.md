@@ -10,8 +10,8 @@ Proses saya mengerjakan ini sebagai berikut:<br>
 <ol>
   <li>mencopy bahan ajar dari pertemuan 11 ke pertemuan 12</li>
   <li>memasukan link cid diread.php</li>
-  <li>Membuat file baru bernama koneksi.php</li>
-  <li>Memasukan kode ke koneksi.php, kode mysqli</li>
+  <li>Memambahkan flash error di read.php</li>
+  <li>Membuat file baru edit.php.</li>
   <li>Memasang phpmyadmin di laragon</li>
   <li>Memmbuat database dan ganti nama ke db_pwd2025</li>
   <li>Masukan kode SQL untuk table tbl_tamu</li>
