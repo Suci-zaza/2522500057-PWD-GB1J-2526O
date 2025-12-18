@@ -8,8 +8,8 @@ Kelompok: GB1J<br>
 Proses saya mengerjakan ini sebagai berikut:<br>
 
 <ol>
-  <li>Donwload bahan ajar untuk pertemuan-10</li>
-  <li>Masukan bahan ajar ke vsc dan ke git hub</li>
+  <li>mencopy bahan ajar dari pertemuan 11 ke pertemuan 12</li>
+  <li>memasukan link cid diread.php</li>
   <li>Membuat file baru bernama koneksi.php</li>
   <li>Memasukan kode ke koneksi.php, kode mysqli</li>
   <li>Memasang phpmyadmin di laragon</li>
