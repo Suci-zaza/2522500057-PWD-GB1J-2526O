@@ -10,4 +10,6 @@ Nim : 2522500057
     <li>menyalin kode di proses_update.php ke proses_delete</li>
     <li> mengapus kode yang berunsur from di proses_Delete</li>
     <li> menambahkan parameter cid untuk link delete diread.php</li>
+    <li> memperbaiki file proses_delete.php agar mengunakan parameter cid</li>
+     <li> menambahkan konfirmasi pengapusan di read.php untuk link delete</li>
 </ol>
