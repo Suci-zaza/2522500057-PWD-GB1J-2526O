@@ -9,4 +9,5 @@ Nim : 2522500057
     <li> menambahkan link delete untuk ke file proses_delete.php</li>
     <li>menyalin kode di proses_update.php ke proses_delete</li>
     <li> mengapus kode yang berunsur from di proses_Delete</li>
+    <li> menambahkan parameter cid untuk link delete diread.php</li>
 </ol>
