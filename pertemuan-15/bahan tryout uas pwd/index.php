@@ -39,53 +39,54 @@ require_once __DIR__ . '/fungsi.php';
     </section>
 
     <section id="biodata">
-      <h2>Biodata Sederhana Mahasiswa</h2>
-      <form action="proses.php" method="POST">
+    <h2>Biodata Sederhana Mahasiswa</h2>
 
-        <label for="txtNim"><span>NIM:</span>
-          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
+    <form action="proses_biodata.php" method="POST">
+        <label>NIM:
+            <input type="text" name="txtNim" required>
         </label>
 
-        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required>
+        <label>Nama Lengkap:
+            <input type="text" name="txtNmLengkap" required>
         </label>
 
-        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required>
+        <label>Tempat Lahir:
+            <input type="text" name="txtT4Lhr">
         </label>
 
-        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
+        <label>Tanggal Lahir:
+            <input type="date" name="txtTglLhr">
         </label>
 
-        <label for="txtHobi"><span>Hobi:</span>
-          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
+        <label>Hobi:
+            <input type="text" name="txtHobi">
         </label>
 
-        <label for="txtPasangan"><span>Pasangan:</span>
-          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
+        <label>Pasangan:
+            <input type="text" name="txtPasangan">
         </label>
 
-        <label for="txtKerja"><span>Pekerjaan:</span>
-          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
+        <label>Pekerjaan:
+            <input type="text" name="txtKerja">
         </label>
 
-        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
-          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
+        <label>Nama Orang Tua:
+            <input type="text" name="txtNmOrtu">
         </label>
 
-        <label for="txtNmKakak"><span>Nama Kakak:</span>
-          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
+        <label>Nama Kakak:
+            <input type="text" name="txtNmKakak">
         </label>
 
-        <label for="txtNmAdik"><span>Nama Adik:</span>
-          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
+        <label>Nama Adik:
+            <input type="text" name="txtNmAdik">
         </label>
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
-      </form>
-    </section>
+    </form>
+</section>
+
 
     <?php
     $biodata = $_SESSION["biodata"] ?? [];
