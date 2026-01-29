@@ -3,14 +3,15 @@ session_start();
 require 'koneksi.php';
 require 'fungsi.php';
 
-/* Ambil NIM dari URL: biodata_edit.php?nim=2024001
-filter_input memastikan itu string valid */
-$nim = filter_input(INPUT_GET, 'nim', FILTER_SANITIZE_STRING);
+/* GANTI BAGIAN INI di biodata_edit.php */
+$nim = $_GET['nim'] ?? '';  // ← cara sederhana
+$nim = trim($nim);          // ← bersihkan spasi
 
-if (!$nim || $nim === '') {
+if (empty($nim)) {          // ← cek kosong saja
     $_SESSION['flash_error_bio'] = 'NIM tidak valid.';
     redirect_ke('biodata_read.php');
 }
+
 
 /* Ambil data lama dari DB tbl_biodata */
 $stmt = mysqli_prepare($conn, "SELECT nim, nama, tempat, tanggal, hobi, pasangan, pekerjaan, ortu, kakak, adik 
@@ -77,7 +78,12 @@ if (!empty($old_bio)) {
 <?php endif; ?>
 
 <form action="biodata_update.php" method="POST">
-    <input type="hidden" name="nim" value="<?= htmlspecialchars($nim); ?>">
+   <input type="hidden" name="old_nim" value="<?= htmlspecialchars($nim); ?>">
+
+<label for="txtNim"><span>NIM:</span>
+    <input type="text" id="txtNim" name="txtNim" 
+           value="<?= htmlspecialchars($nim); ?>" required>
+</label><br>
     
     <label for="txtNmLengkap"><span>Nama Lengkap:</span>
         <input type="text" id="txtNmLengkap" name="txtNmLengkap" 

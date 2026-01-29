@@ -2,12 +2,15 @@
 require 'koneksi.php';
 require 'fungsi.php';
 
+session_start();  // ← WAJIB
+$_SESSION['flash_error_bio'] = $_SESSION['flash_error_bio'] ?? '';
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['flash_error_bio'] = 'Akses tidak valid.';
     redirect_ke('index.php#biodata');
 }
 
-// Ambil dan bersihkan input
+
 $nim      = bersihkan($_POST['txtNim']       ?? '');
 $nama     = bersihkan($_POST['txtNmLengkap'] ?? '');
 $tempat   = bersihkan($_POST['txtT4Lhr']     ?? '');

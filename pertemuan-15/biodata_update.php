@@ -7,7 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirect_ke('biodata_read.php');
 }
 
-$nim      = bersihkan($_POST['txtNim']       ?? '');
+// Ambil NIM Baru (dari input text) dan NIM Lama (dari input hidden)
+$nim_baru = bersihkan($_POST['txtNim']  ?? ''); 
+$nim_lama = bersihkan($_POST['old_nim'] ?? ''); // <-- Tambahkan ini
+
+// ... (variabel lain tetap sama)
 $nama     = bersihkan($_POST['txtNmLengkap'] ?? '');
 $tempat   = bersihkan($_POST['txtT4Lhr']     ?? '');
 $tanggal  = bersihkan($_POST['txtTglLhr']    ?? '');
@@ -20,15 +24,15 @@ $adik     = bersihkan($_POST['txtNmAdik']    ?? '');
 
 $errors = [];
 
-if ($nim === '') {
+if ($nim_baru === '') {
     $errors[] = 'NIM tidak boleh kosong.<br>';
 }
+// (opsional) validasi format NIM di sini
+ 
+
 if ($nama === '') {
     $errors[] = 'Nama wajib diisi.<br>';
-} elseif (mb_strlen($nama) < 3) {
-    $errors[] = 'Nama minimal 3 karakter.<br>';
 }
-
 if (!empty($tanggal) && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $tanggal)) {
     $errors[] = 'Format tanggal lahir tidak valid.<br>';
 }
@@ -51,8 +55,8 @@ if (!empty($errors)) {
 
 $stmt = mysqli_prepare($conn,
     "UPDATE tbl_biodata
-     SET nama = ?, tempat = ?, tanggal = ?, hobi = ?, pasangan = ?, pekerjaan = ?, ortu = ?, kakak = ?, adik = ?
-     WHERE nim = ?"
+     SET nim = ?, nama = ?, tempat = ?, tanggal = ?, hobi = ?, pasangan = ?, pekerjaan = ?, ortu = ?, kakak = ?, adik = ?
+     WHERE nim = ?" // <-- WHERE menggunakan NIM lama
 );
 
 if (!$stmt) {
@@ -62,10 +66,11 @@ if (!$stmt) {
 
 mysqli_stmt_bind_param(
     $stmt,
-    "sssssssss s",
-    $nama, $tempat, $tanggal, $hobi, $pasangan, $pekerjaan, $ortu, $kakak, $adik, $nim
+    "sssssssssss", // Tambahkan satu "s" (total jadi 11 "s")
+    $nim_baru,     // <-- Masukkan NIM Baru paling depan (untuk SET nim=?)
+    $nama, $tempat, $tanggal, $hobi, $pasangan, $pekerjaan, $ortu, $kakak, $adik, 
+    $nim_lama      // <-- Gunakan NIM Lama paling belakang (untuk WHERE nim=?)
 );
-
 if (mysqli_stmt_execute($stmt)) {
     unset($_SESSION['old_bio']);
     $_SESSION['flash_sukses_bio'] = 'Biodata berhasil diperbarui.';

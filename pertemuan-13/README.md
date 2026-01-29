@@ -12,4 +12,5 @@ Nim : 2522500057
     <li> menambahkan parameter cid untuk link delete diread.php</li>
     <li> memperbaiki file proses_delete.php agar mengunakan parameter cid</li>
      <li> menambahkan konfirmasi pengapusan di read.php untuk link delete</li>
+     <li> menambahkan konfirmasi pengapusan nama pengguna di read.php untuk link delete</li>
 </ol>
