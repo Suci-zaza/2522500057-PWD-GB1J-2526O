@@ -65,3 +65,25 @@ mysqli_stmt_bind_param(
     "sssssssss s",
     $nama, $tempat, $tanggal, $hobi, $pasangan, $pekerjaan, $ortu, $kakak, $adik, $nim
 );
+
+if (mysqli_stmt_execute($stmt)) {
+    unset($_SESSION['old_bio']);
+    $_SESSION['flash_sukses_bio'] = 'Biodata berhasil diperbarui.';
+    redirect_ke('biodata_read.php');
+} else {
+    $_SESSION['old_bio'] = [
+        'nama'     => $nama,
+        'tempat'   => $tempat,
+        'tanggal'  => $tanggal,
+        'hobi'     => $hobi,
+        'pasangan' => $pasangan,
+        'pekerjaan'=> $pekerjaan,
+        'ortu'     => $ortu,
+        'kakak'    => $kakak,
+        'adik'     => $adik,
+    ];
+    $_SESSION['flash_error_bio'] = 'Biodata gagal diperbarui.';
+    redirect_ke('biodata_edit.php?nim=' . urlencode($nim));
+}
+
+mysqli_stmt_close($stmt);
