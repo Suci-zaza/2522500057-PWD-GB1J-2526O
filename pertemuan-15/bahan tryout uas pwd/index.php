@@ -38,8 +38,28 @@ require_once __DIR__ . '/fungsi.php';
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
+    <?php
+$flash_sukses_bio = $_SESSION['flash_sukses_bio'] ?? '';
+$flash_error_bio  = $_SESSION['flash_error_bio']  ?? '';
+$old_bio          = $_SESSION['old_bio']          ?? [];
+unset($_SESSION['flash_sukses_bio'], $_SESSION['flash_error_bio'], $_SESSION['old_bio']);
+?>
+
+
     <section id="biodata">
     <h2>Biodata Sederhana Mahasiswa</h2>
+
+    <?php if (!empty($flash_sukses_bio)): ?>
+    <div class="alert-success"><?= $flash_sukses_bio; ?></div>
+<?php endif; ?>
+
+<?php if (!empty($flash_error_bio)): ?>
+    <div class="alert-error"><?= $flash_error_bio; ?></div>
+<?php endif; ?>
+
+<input type="text" name="txtNim"
+       value="<?= isset($old_bio['nim']) ? htmlspecialchars($old_bio['nim']) : '' ?>">
+
 
     <form action="proses_biodata.php" method="POST">
         <label>NIM:
